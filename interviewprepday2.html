@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>Q1.What is creation phase and execution phase?</h4>
+    <pre>
+        Creation Phase
+
+        Compiler runs through the entire code for 2 time before actually executing the code,
+        
+        In the first run, It picks all function declarations and stores them in memory with their reference.
+        In the second run, It picks all variables and assign undefined to them. In the event of a conflict between variable and function declaration name then that variable is ignored.
+         
+        Execution Phase
+
+        Variables assigned with values
+        Functions executed
+    </pre>
+
+    <h4>Q2.What are objects in javascript?</h4>
+    <pre>
+        Objects in programming can be a combination of variables, functions, and data structures. This means that objects can store values, you can use objects to manipulate values and combine them into more complex objects, like arrays and still get all the benefits. JavaScript is no different.
+    </pre>
+
+    <h4>Q3.What are function constructors?</h4>
+    <pre>
+        The function statement is not the only way to define a new function; you can define your function dynamically using Function() constructor along with the new operator.
+        The Function() constructor expects any number of string arguments. The last argument is the body of the function – it can contain arbitrary JavaScript statements, separated from each other by semicolons.
+    </pre>
+
+    <h4>Q4.Explain prototypes</h4>
+    <pre>
+        Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype.
+      </pre
+    >
+    <h4>Q5.What is prototype chain</h4>
+    <pre>
+        Every object in JavaScript has a built-in property, which is called its prototype. The prototype is itself an object, so the prototype will have its own prototype, making what's called a prototype chain. The chain ends when we reach a prototype that has null for its own prototype
+      </pre
+    >
+
+    <h4>Q6.Give an example of inheritance using function constructor</h4>
+      <pre>
+        The implementation of inheritance varies according to the object creation method. In this post, I am going to explain creating inheritance between a function constructor.
+
+        Let’s say you have a function:
+        
+        
+        function animal(name, age) {
+        
+            this.name = name;
+        
+            this.age = age;
+        
+        }
+        If you call the animal function using the new operator, an object will be created. This way creating objects is also known as the “Constructor Invocation Pattern.”
+        
+        
+        var dog = new animal('foo', 5);
+        
+        console.log(dog);
+        
+        var cat = new animal('koo', 3);
+        
+        console.log(cat);
+        The dog and cat objects both have their own names and age properties. If you want a property or method to be shared across all objects, add that to the prototype of the function.
+        
+        
+        animal.prototype.canRun = function () {
+    
+            console.log('yes ' + this.name + ' can run !');
+    
+        }
+         let us create another constructor – human:
+        
+    
+        function human(name, age, money) {
+    
+            this.name = name ;
+    
+            this.age = age ; 
+    
+            this.money = money;
+    
+        }
+        
+        human.prototype.canEarn = function () {
+        
+            console.log('yes ' + this.name + 'can earn');
+        
+        }
+        At this point in time, the human and animal functions do not have any relationship. However, we know that humans are also animals. There are two problems with the human constructor.
+        
+        It has duplicate code for name and ageinitialization. It should use theanimal constructor for this purpose.
+        It does not have any links with the animal constructor.
+        The above problems can be removed by creating inheritance between the animal and human function constructors.
+     </pre>
+
+    <h4>
+      Q7.What are callbacks?
+    </h4>
+    <pre>
+        A callback is a function passed as an argument to another function. This technique allows a function to call another function. A callback function can run after another function has finished.
+        
+        const button = document.getElementById('button');
+                   function callback(){
+                console.log("Hello world");
+            }
+
+            button.addEventListener('click',callback);
+    </pre>
+  </body>
+</html>
